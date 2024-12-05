@@ -5,7 +5,7 @@ export default {
   level: 'alpha',
   product: 'HighPixel API',
 
-  auth: {
+  Auth: {
     secretKey: process.env.SECRET_KEY,
     expiresIn: '7d',
   },

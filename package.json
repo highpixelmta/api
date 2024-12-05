@@ -7,8 +7,7 @@
   "scripts": {
     "start": "ts-node src/server.ts",
     "dev": "ts-node-dev --ignore-watch node_modules src/infra/server.ts",
-    "build": "tsc -p tsconfig.json",
-    "abc": "ts-node -r tsconfig-paths/register --transpiler sucrase/ts-node-plugin src/app.ts"
+    "build": "tsc -p tsconfig.json"
   },
   "author": "Julio Developer",
   "license": "MIT",

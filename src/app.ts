@@ -23,7 +23,7 @@ class HighPixelAPI {
         signed: false,
       },
       sign: {
-        expiresIn: highpixelConfig.auth.expiresIn,
+        expiresIn: highpixelConfig.Auth.expiresIn,
       },
     });
 

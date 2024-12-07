@@ -1,9 +1,0 @@
-[build]
-  command = "npm run dev"
-  publish = "dist"
-
-[build.environment]
-  NODE_VERSION = "20"
-
-[functions]
-  directory = "dist/functions"

@@ -4,15 +4,16 @@ config();
 export default {
   level: 'alpha',
   product: 'HighPixel API',
+  port: Number(process.env.PORT),
 
   Auth: {
-    secretKey: process.env.SECRET_KEY,
+    secretKey: String(process.env.SECRET_KEY),
     expiresIn: '7d',
   },
 
   Discord: {
     prefixBot: ".",
-    token: process.env.BOT_DISCORD_TOKEN,
+    token: String(process.env.BOT_DISCORD_TOKEN),
     clientId: process.env.OAUTH2_DISCORD_CLIENT_ID,
 
     webhook: process.env.WEBHOOK_DISCORD,

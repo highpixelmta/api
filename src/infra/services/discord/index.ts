@@ -33,8 +33,6 @@ export default class StartBOT {
     this.slashCommands = [];
     this.loadCommands();
     this.loadSlashCommands();
-
-    // Registra comandos de slash na API do Discord
     this.registerSlashCommands();
 
     this.bot.on(Events.ClientReady, () => {
@@ -87,7 +85,6 @@ export default class StartBOT {
     this.bot.login(highpixelConfig.Discord.token);
   }
 
-  // Carregar comandos tradicionais (prefix)
   private loadCommands() {
     const commandsPath = join(__dirname, "./commands");
     const commandFiles = readdirSync(commandsPath).filter((file) =>
@@ -105,7 +102,6 @@ export default class StartBOT {
     }
   }
 
-  // Carregar comandos de slash
   private loadSlashCommands() {
     const slashCommandsPath = join(__dirname, "./slashCommands");
     const slashCommandFiles = readdirSync(slashCommandsPath).filter((file) =>
@@ -123,7 +119,6 @@ export default class StartBOT {
     }
   }
 
-  // Registrar comandos de slash na API do Discord
   private async registerSlashCommands() {
     const commands = this.slashCommands.map(cmd => ({
       name: cmd.name,

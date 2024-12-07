@@ -27,9 +27,10 @@ class HighPixelAPI {
       },
     });
 
-    this.app.register(fastifyCookie)
+    this.app.register(fastifyCookie);
     this.app.register(userRoutes);
     new StartBOT();
   }
 }
+
 export default new HighPixelAPI;

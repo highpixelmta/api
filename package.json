@@ -7,7 +7,8 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/infra/server.ts"
+    "dev": "tsx watch src/infra/server.ts",
+    "build": "npm i && tsup src"
   },
   "dependencies": {
     "@fastify/cookie": "^11.0.1",

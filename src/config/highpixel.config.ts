@@ -4,7 +4,7 @@ config();
 export default {
   level: 'alpha',
   product: 'HighPixel API',
-  port: Number(process.env.PORT),
+  port: Number(process.env.PORT) || 4000,
 
   Auth: {
     secretKey: String(process.env.SECRET_KEY),

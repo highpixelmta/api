@@ -14,7 +14,7 @@ interface SlashCommand {
   execute: (interaction: any) => Promise<void>;
 }
 
-export default class StartBOT {
+class StartBOT {
   public bot: Client;
   public commands: Collection<string, Command>;
   public slashCommands: SlashCommand[];
@@ -47,7 +47,6 @@ export default class StartBOT {
         const role = await member.guild.roles.fetch(String(highpixelConfig.Discord.roleMember));
         if (role) {
           await member.roles.add(role);
-          // console.log(`Role ${role.name} (${role.id}) added to ${member.user.tag}`);
         }
     });
 
@@ -139,3 +138,5 @@ export default class StartBOT {
     }
   }
 }
+
+export default new StartBOT();

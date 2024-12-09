@@ -2,22 +2,25 @@ import Fastify, { FastifyInstance } from 'fastify'
 import { fastifyCors } from '@fastify/cors'
 import fastifyJwt from '@fastify/jwt'
 import fastifyCookie from '@fastify/cookie'
-import { userRoutes } from './infra/http/routes/user';
-import StartBOT from './infra/services/discord';
+import { appRoutes } from './infra/http/routes/routes';
 import highpixelConfig from './config/highpixel.config';
+import StartBOT from './infra/services/discord/events/interactionCreate';
 
 class HighPixelAPI {
   public app: FastifyInstance;
 
   constructor() {
     this.app = Fastify();
+
     this.app.register(fastifyCors, {
-      origin: ['http://localhost:4000'],
+      origin: ['http://localhost:4000', 'https://highpixelmta.netlify.app'],
       methods: ['GET', 'POST', 'PUT', 'PATCH'],
       credentials: true,
+      logLevel: 'error'
     })
+
     this.app.register(fastifyJwt, {
-      secret: process.env.SECRET_KEY as string,
+      secret: highpixelConfig.Auth.secretKey,
       cookie: {
         cookieName: 'refreshToken',
         signed: false,
@@ -27,10 +30,11 @@ class HighPixelAPI {
       },
     });
 
-    this.app.register(fastifyCookie);
-    this.app.register(userRoutes);
+    this.app.register(fastifyCookie)
+    this.app.register(appRoutes);
     new StartBOT();
   }
 }
 
-export default new HighPixelAPI;
+
+export default new HighPixelAPI();

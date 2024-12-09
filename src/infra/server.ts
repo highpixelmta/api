@@ -1,11 +1,10 @@
-import HighPixelAPI from '../app';
-import { config } from "dotenv";
-config();
-import highpixelConfig from "../config/highpixel.config";
+import HighPixelAPI from '../app'
+import highpixelConfig from '../config/highpixel.config'
 
-
-HighPixelAPI.app.listen({ port: highpixelConfig.port, host: '0.0.0.0' }).then(() => {
-  console.log(`HTTP server running`);
-}).catch((err) => {
-  console.error("Erro ao iniciar o servidor HTTP:", err);
-});
+HighPixelAPI.app.listen({ port: highpixelConfig.port }, function (err, adress) {
+  if (err) {
+    HighPixelAPI.app.log.error(err)
+    process.exit(1)
+  }
+  console.log(`HTTP server running in: ${adress}`)
+})

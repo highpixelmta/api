@@ -8,7 +8,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/infra/server.ts",
-    "build": "npm i && tsup src"
+    "build": "tsup src --out-dir build"
   },
   "dependencies": {
     "@fastify/cookie": "^11.0.1",

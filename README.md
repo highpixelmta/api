@@ -14,18 +14,26 @@ Database: [PostgreSQL](https://www.postgresql.org/)
 
 
 ## Running Project 
+- Make sure you have NVM installed on your machine.
+<br/>
+1. Use NVM to ensure you are using the correct version of Node.js. Run the following command in the terminal to use the correct version: <br/> <br/>
 
-1. Create a .env file based on .env.example.
+```
+nvm use
+```
+<br/>
+
+2. Create a .env file based on .env.example.
 <br/> <br/>
-2. Download all the necessary dependencies of the project using the command: <br/> <br/>
+3. Download all the necessary dependencies of the project using the command: <br/> <br/>
 
 ```
-yarn
+npm install
 ```
-3. Now all that’s left to do is run the following command to start the API: <br/> <br/>
+4. Now all that’s left to do is run the following command to start the API: <br/> <br/>
 
 ```
-yarn dev
+npm run dev
 ```
 
 

@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/infra/server.ts",
+      "use": "@versel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "(.*)",
+      "dest": "src/infra/server.ts"
+    }
+  ]
+}

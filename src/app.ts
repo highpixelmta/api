@@ -13,7 +13,7 @@ class HighPixelAPI {
     this.app = Fastify();
 
     this.app.register(fastifyCors, {
-      origin: ['http://localhost:4000', 'https://highpixelmta.netlify.app'],
+      origin: ["*"],
       methods: ['GET', 'POST', 'PUT', 'PATCH'],
       credentials: true,
       logLevel: 'error'

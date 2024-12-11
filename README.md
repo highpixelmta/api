@@ -4,6 +4,7 @@ This API is responsible for taking care of the entire HighPixel Core.
 ## Pre-requisites
 
 [Node.js](https://nodejs.org/) <br>
+[Yarn](https://yarnpkg.com/) <br>
 
 ## Development
 
@@ -19,12 +20,12 @@ Database: [PostgreSQL](https://www.postgresql.org/)
 2. Download all the necessary dependencies of the project using the command: <br/> <br/>
 
 ```
-npm i
+yarn
 ```
 3. Now all that’s left to do is run the following command to start the API: <br/> <br/>
 
 ```
-npm run dev
+yarn dev
 ```
 
 
